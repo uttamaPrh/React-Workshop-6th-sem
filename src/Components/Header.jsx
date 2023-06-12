@@ -13,6 +13,7 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import { CssBaseline } from "@mui/material";
+import { Link } from "react-router-dom";
 
 const pages = ["Products", "Pricing", "Blog"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
@@ -57,7 +58,7 @@ function ResponsiveAppBar() {
               textDecoration: "none",
             }}
           >
-            I'm Uttam Pradhan
+            Uttam
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -119,16 +120,24 @@ function ResponsiveAppBar() {
           >
             Uttam
           </Typography>
+
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            <Button sx={{ my: 2, color: "white", display: "block" }}>
-              Home
-            </Button>
-            <Button sx={{ my: 2, color: "white", display: "block" }}>
-              About
-            </Button>
-            <Button sx={{ my: 2, color: "white", display: "block" }}>
-              blog
-            </Button>
+            <Link to="/" style={{ textDecoration: "none" }}>
+              <Button sx={{ my: 2, color: "white", display: "block" }}>
+                Home
+              </Button>
+            </Link>
+            <Link to="/about" style={{ textDecoration: "none" }}>
+              <Button sx={{ my: 2, color: "white", display: "block" }}>
+                About Us
+              </Button>
+            </Link>
+
+            <Link to="/blog" style={{ textDecoration: "none" }}>
+              <Button sx={{ my: 2, color: "white", display: "block" }}>
+                Blog
+              </Button>
+            </Link>
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
