@@ -80,7 +80,7 @@ export default function Home() {
                   </Typography>
                 </CardContent>
                 <CardActions>
-                  <Button onClick={()=>navigate(`/blog${blog.id}`)}
+                  <Button onClick={()=>navigate(`/blog/${blog.id}`)}
                   size="small">Learn More</Button>
                 </CardActions>
               </Card>
