@@ -91,13 +91,16 @@ function ResponsiveAppBar() {
               }}
             >
               <MenuItem>
-                <Typography textAlign="center">Home</Typography>
+              <Link to="/" style={{ textDecoration: "none" }}>
+                <Typography textAlign="center">Home</Typography></Link>
               </MenuItem>
               <MenuItem>
-                <Typography textAlign="center">About Us</Typography>
+              <Link to="/about" style={{ textDecoration: "none" }}>
+                <Typography textAlign="center">About Us</Typography></Link>
               </MenuItem>
               <MenuItem>
-                <Typography textAlign="center">Blog</Typography>
+              <Link to="/blog" style={{ textDecoration: "none" }}>
+                <Typography textAlign="center">Blog</Typography></Link>
               </MenuItem>
             </Menu>
           </Box>
