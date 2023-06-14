@@ -39,7 +39,10 @@ function AdminLayout(props) {
             <ListItemIcon>
               <Home />
             </ListItemIcon>
-            <ListItemText primary="Home" />
+            <ListItemText 
+            onClick={()=> Navigate("/admin/home")}
+
+            primary="Home" />
           </ListItemButton>
         </ListItem>
       </List>

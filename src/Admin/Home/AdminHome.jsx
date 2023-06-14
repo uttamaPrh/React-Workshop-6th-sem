@@ -12,6 +12,9 @@ import { Box, CircularProgress } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
 export default function Home() {
+const Navigate = useNavigate();
+
+
   const [blog, setBlog] = React.useState([]);
   const [loading, setLoading] = React.useState(true);
   const [isDeleting,setIsDeleting] = React.useState(true)
@@ -23,6 +26,10 @@ export default function Home() {
     setBlog(res.data);
     setLoading(false);
   };
+    
+
+
+
    const deleteBlog = async(id) =>  {
     setId(id);
     setIsDeleting(true);
@@ -91,7 +98,7 @@ export default function Home() {
                 <CardActions>
 
 
-                  <Button onClick={()=>navigate(`/blog/${blog.id}`)}
+                  <Button onClick={()=>navigate(`/admin/edit/${blog.id}`)}
                   size="small">Edit</Button>
                 <Button color="warning" size='small' onClick={()=> deleteBlog(blog.id)}>
                   {id == blog.id && isDeleting ? "Deleting..." : "Delete"}</Button>
