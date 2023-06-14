@@ -16,8 +16,8 @@ import MailIcon from "@mui/icons-material/Mail";
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import { Outlet } from "react-router-dom";
-import { Home } from "@mui/icons-material";
+import { Navigate, Outlet, useNavigate } from "react-router-dom";
+import { Add, Home } from "@mui/icons-material";
 
 const drawerWidth = 240;
 
@@ -28,7 +28,7 @@ function AdminLayout(props) {
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
-
+ const Navigate = useNavigate()
   const drawer = (
     <div>
       <Toolbar />
@@ -43,19 +43,25 @@ function AdminLayout(props) {
           </ListItemButton>
         </ListItem>
       </List>
-      <Divider />
+
+
       <List>
-        {["All mail", "Trash", "Spam"].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
-        ))}
+        <ListItem disablePadding>
+          <ListItemButton>
+            <ListItemIcon>
+              <Add />
+            </ListItemIcon>
+            <ListItemText 
+            onClick={()=> Navigate("/admin/add")}
+            primary="Add" />
+          </ListItemButton>
+        </ListItem>
       </List>
+
+
+      
+      <Divider />
+    
     </div>
   );
 
