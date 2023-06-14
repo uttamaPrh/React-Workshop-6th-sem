@@ -16,9 +16,9 @@ const SingleBlog = () => {
         },[]);
   return (
    <div>
-<Box>
+<Box sx={{width:'90%', margin:'0 auto'}}>
     <Typography sx={{ fontSize:"209px",fontWeight:'800', textAlign:'center'}}>{SingleBlog.Title}</Typography>
-    <img src={SingleBlog.Image} style={{height:"400px",width:'100%'}}/>
+    <img src={SingleBlog.Image} style={{height:"400px",width:'100%', objectFit:'contain'}}/>
     <Typography sx={{pb:2}}>{SingleBlog.Author}</Typography>
     <Divider/>
     <Typography sx={{pt:3}}>{SingleBlog.Description}</Typography>
