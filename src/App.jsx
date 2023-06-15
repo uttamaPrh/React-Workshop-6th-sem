@@ -11,12 +11,14 @@ import AdminLayout from "./Admin/Layout";
 import AdminHome from "./Admin/Home/AdminHome";
 import AddBlog from "./Admin/Home/Blog/AddBlog";
 import EditBlog from "./Admin/Home/Blog/EditBlog";
+import Login from "./Auth/Login";
 
 function App() {
   return (
     <>
       <Router>
         <Routes>
+          <Route path="/login" element={<Login/>}/>
           <Route path="" element={<UserLayout/>}>
             <Route path="/"  element={<Home/>}/>
             <Route path="/about" element={<About/>}/>
