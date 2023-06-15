@@ -9,7 +9,7 @@ import axios from "axios";
 import { baseUrl } from "../../Globals/Config";
 import { Margin } from "@mui/icons-material";
 import { Box, CircularProgress } from "@mui/material";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Home() {
   const [blog, setBlog] = React.useState([]);
@@ -27,10 +27,11 @@ export default function Home() {
 
   return (
     <Box sx={{ width: "90%", margin: "0 auto" }}>
-      <Typography variant="h3" sx={{ my: 3, textAlign: "Center" }}>
-        Blog
-      </Typography>
-      {/* {loading ? "loading...." : 'gjhgjhgf'} */}
+      <Link to={"/admin/home"}>
+        <Typography variant="h3" sx={{ my: 3, textAlign: "Center" }}>
+          Blog
+        </Typography>{" "}
+      </Link>
       {loading ? (
         <Box
           sx={{
@@ -80,8 +81,12 @@ export default function Home() {
                   </Typography>
                 </CardContent>
                 <CardActions>
-                  <Button onClick={()=>navigate(`/blog/${blog.id}`)}
-                  size="small">Learn More</Button>
+                  <Button
+                    onClick={() => navigate(`/blog/${blog.id}`)}
+                    size="small"
+                  >
+                    Learn More
+                  </Button>
                 </CardActions>
               </Card>
             );

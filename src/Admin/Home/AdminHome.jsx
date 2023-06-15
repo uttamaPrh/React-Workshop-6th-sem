@@ -9,7 +9,7 @@ import axios from "axios";
 import { baseUrl } from "../../Globals/Config";
 import { Margin } from "@mui/icons-material";
 import { Box, CircularProgress } from "@mui/material";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Home() {
 const Navigate = useNavigate();
@@ -43,9 +43,10 @@ const Navigate = useNavigate();
 
   return (
     <Box sx={{ width: "90%", margin: "0 auto" }}>
+      <Link to={"/"}>
       <Typography variant="h3" sx={{ my: 3, textAlign: "Center" }}>
         Blog
-      </Typography>
+      </Typography></Link>
       {/* {loading ? "loading...." : 'gjhgjhgf'} */}
       {loading ? (
         <Box
